@@ -1,0 +1,9 @@
+/*Style.css - til dine custom styles*/
+
+img{
+    width: 100%;
+}
+.row{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
