@@ -1,2 +1,4 @@
 .sass-cache/
 *.css.map
+/bs-old_v4_0_0/
+.DS_Store
