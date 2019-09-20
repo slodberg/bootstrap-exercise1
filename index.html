@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
+  <title>Bootstrap basic grid and centering</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,33 +19,33 @@
     <!-- class="container" bruges som yderste kasse (/container) for vores grid -->
 
     <section id="hero">
-      <div><img src="imgs/raadhuspladsen01.jpg"></div>
+      <div><img src="imgs/raadhuspladsen01.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
     </section>
 
-    <section id="top">
-      <div><img src="imgs/raadhuspladsen02.jpg"></div>
-      <div><img src="imgs/raadhuspladsen04.jpg"></div>
-      <div><img src="imgs/raadhuspladsen06.jpg"></div>
+    <section id="top" class="row">
+      <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
+      <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
+      <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
     </section>
 
-    <section id="middle">
-      <div><img src="imgs/raadhuspladsen02.jpg"></div>
-      <div><img src="imgs/raadhuspladsen06.jpg"></div>
+    <section id="middle" class="row">
+      <img class="col-6 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+      <img class="col-6 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
     </section>
 
-    <section id="middle">
-      <div><img src="imgs/raadhuspladsen02.jpg"></div>
+    <section id="middle-2" style="background-color: red;">
+      <div class="text-center"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
     </section>
 
-    <section id="bottom">
-      <div><img src="imgs/raadhuspladsen01.jpg"></div>
-      <div><img src="imgs/raadhuspladsen02.jpg"></div>
-      <div><img src="imgs/raadhuspladsen04.jpg"></div>
-      <div><img src="imgs/raadhuspladsen06.jpg"></div>
+    <section id="bottom" class="row">
+      <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen01.jpg" alt="raadhuspladsen"></div>
+      <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
+      <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
+      <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
     </section>
 
-    <footer id="footer">
-      <div><img src="imgs/raadhuspladsen03.jpg"></div>
+    <footer id="footer" class="row">
+      <div class="col-6 offset-3"><img src="imgs/raadhuspladsen03.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
     </footer>
 
   </main>
