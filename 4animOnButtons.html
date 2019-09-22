@@ -1,0 +1,184 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>4. Animation On buttons - parallax</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/parallax.css"> <!-- lacj -->
+  <link rel="stylesheet" href="css/animation.css"> <!-- lacj -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    a:hover {
+      background-color: hotpink;
+    }
+
+    /* fix covering h4s when clicking nav items: https://github.com/twbs/bootstrap/issues/1768#issuecomment-9793708 */
+    /* both below [id^=anchor] mess up box sizes & background-color lacj */
+    [id^=anchor] {
+      padding-top: 56px;
+      margin-top: -56px;
+    }
+
+    footer {
+      background-color: hotpink;
+    }
+
+    /*
+    [id^=anchor]:before {
+      display: block;
+      content: " ";
+      margin-top: -75px;
+      height: 75px;
+      visibility: hidden;
+    }
+ */
+  </style><!-- https://www.w3schools.com/cssref/trysel.asp -->
+</head>
+<!-- https://getbootstrap.com/docs/4.0/components/scrollspy/#example-in-navbar
+body:
+-->
+
+<body class="position-relative" data-spy="scroll" data-target="#navbar-example2" data-offset="156">
+  <!-- lacj: https://getbootstrap.com/docs/4.0/utilities/position/ -->
+
+  <!-- Add More Parallax Sections Here -->
+  <!-- <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center"> -->
+  <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center">
+    <!-- fixed-top used as for fallback for IE, we might want sticky if we want white space above it-->
+    <a class="navbar-brand mr-auto" href="index.html">Parallax-2 with jQuery & CSS animations</a>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="#anchor-tag1">One</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#anchor-tag2">Two</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#anchor-tag3">Three</a>
+      </li>
+      <!--       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#one">one</a>
+          <a class="dropdown-item" href="#two">two</a>
+          <div role="separator" class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#three">three</a>
+        </div>
+      </li> -->
+    </ul>
+  </nav>
+
+  <main>
+    <h1><a href="http://animista.net/play/basic/shadow-pop">http://animista.net/play/basic/shadow-pop</a></h1>
+
+    <!-- class="container" bruges som yderste kasse (/container) for vores grid -->
+    <div class="container">
+      <h4 id="anchor-tag1">One</h4>
+      <section id="hero" class="mb-5">
+        <div><img src="imgs/raadhuspladsen01.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
+      </section>
+    </div>
+    <!-- First Parallax Section -->
+    <div class="jumbotron paral paralsec">
+      <h1 class="display-3">Here is a heading 1</h1>
+      <p class="lead">Here is a short description 1</p>
+      <p class="lead">
+        <button class="btn btn-info btn-lg btn-md" href="#" role="button" type="button">Here is a button 1</button>
+      </p>
+    </div>
+    <div class="container">
+      <section id="top" class="row">
+        <h4 id="anchor-tag2" class="col-12">two</h4>
+        <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
+        <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
+        <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
+      </section>
+    </div><!-- END container -->
+    <!-- Second Parallax Section -->
+    <div class="jumbotron paral paralsec1">
+      <h1 class="display-3">Here is a heading 2</h1>
+      <p class="lead">Here is a short description 2</p>
+      <p class="lead">
+        <button class="btn btn-warning btn-lg btn-md" href="widgets.html" role="button" type="button">Here is a button 2</button>
+      </p>
+    </div>
+    <div class="container">
+      <h4 id="anchor-tag3">three (sat uden for section for demo => anderledes margin-bottom)</h4>
+      <section id="middle" class="row">
+        <img class="col-6 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+        <img class="col-6 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+      </section>
+
+      <section id="middle-2" style="background-color: red;">
+        <h4 id="anchor-tag4">four</h4>
+        <div class="text-center"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
+      </section>
+
+      <section id="bottom-1" class="row">
+        <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen01.jpg" alt="raadhuspladsen"></div>
+        <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
+        <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
+        <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
+      </section>
+      <section id="bottom-2" class="row">
+        <h4 id="anchor-tag5" class="col-12">Five</h4>
+        <div class="col-6 offset-3"><img src="imgs/raadhuspladsen03.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
+      </section>
+    </div><!-- END .container -->
+  </main>
+
+  <!-- Third Parallax Section -->
+  <div class="jumbotron paral paralsec2">
+    <h1 class="display-3">Here is a heading 3</h1>
+    <p class="lead">Here is a short description 2</p>
+    <p class="lead">
+      <button class="btn btn-primary btn-lg btn-md" href="themes.html" role="button">Here is a button 3</button>
+    </p>
+  </div>
+  <footer id="footer" class="mt-auto py-3 container-fluid">
+    <h3>Hello from Lasse Claes</h3>
+
+  </footer>
+  <!-- Ikke mere indhold efter denne linie -->
+
+  <!-- jQuery og popper.js inkludes herunder - nødvendigt for Bootstrap  - slet dem ikke-->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <script src="bs/js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+      $('button').on('click', startAnimation);
+
+      function startAnimation() {
+        alert("hello");
+        $this = $(this);
+        $this.addClass('flip-scale-up-hor');
+        $this.off();
+        revertFlipScaleUp($this);
+      };
+
+      function revertFlipScaleUp(arg) {
+        setTimeout(function() {
+          $('button').on('click', startAnimation), arg.removeClass('flip-scale-up-hor')
+        }, 5000);
+
+      }
+      /* sådan virker det ikke -
+      $('button').on('activate.bs.scrollspy', function () {
+        alert("hihi");
+}) */
+
+    });
+  </script>
+</body></html>
