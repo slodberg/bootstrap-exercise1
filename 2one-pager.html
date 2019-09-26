@@ -21,9 +21,22 @@
 
     /* fix covering h4s when clicking nav items: https://github.com/twbs/bootstrap/issues/1768#issuecomment-9793708 */
     /* both below [id^=anchor] mess up box sizes & background-color lacj */
-    [id^=anchor] {
-      padding-top: 56px;
-      margin-top: -56px;
+
+    [id^=anchor] {}
+
+    #middle-2 {
+      background-color: red;
+    }
+
+    [id^=anchor]:target::before {
+      /*padding-top: 56px;
+      margin-top: -56px;*/
+      background-color: white;
+      display: block;
+      content: " ";
+      margin-top: -75px;
+      height: 75px;
+      visibility: hidden;
     }
 
     footer {
@@ -39,6 +52,7 @@
       visibility: hidden;
     }
  */
+
   </style><!-- https://www.w3schools.com/cssref/trysel.asp -->
 </head>
 <!-- https://getbootstrap.com/docs/4.0/components/scrollspy/#example-in-navbar
@@ -62,6 +76,12 @@ body:
       <li class="nav-item">
         <a class="nav-link" href="#anchor-tag3">Three</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#anchor-tag4">Four</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#anchor-tag5">Five</a>
+      </li>
       <!--       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
         <div class="dropdown-menu">
@@ -76,13 +96,14 @@ body:
 
   <main class="container">
     <!-- class="container" bruges som yderste kasse (/container) for vores grid -->
-    <h4 id="anchor-tag1">One</h4>
+
     <section id="hero">
+      <h4>One</h4>
       <div><img src="imgs/raadhuspladsen01.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
     </section>
 
     <section id="top" class="row">
-      <h4 id="anchor-tag2" class="col-12">two</h4>
+      <h4 class="col-12">two</h4>
       <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
       <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
       <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
@@ -94,7 +115,7 @@ body:
       <img class="col-6 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
     </section>
 
-    <section id="middle-2" style="background-color: red;">
+    <section id="middle-2">
       <h4 id="anchor-tag4">four</h4>
       <div class="text-center"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
     </section>
@@ -123,4 +144,6 @@ body:
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
   <script src="bs/js/bootstrap.min.js"></script>
-</body></html>
+</body>
+
+</html>

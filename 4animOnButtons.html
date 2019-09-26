@@ -41,6 +41,7 @@
       visibility: hidden;
     }
  */
+
   </style><!-- https://www.w3schools.com/cssref/trysel.asp -->
 </head>
 <!-- https://getbootstrap.com/docs/4.0/components/scrollspy/#example-in-navbar
@@ -161,7 +162,8 @@ body:
       $('button').on('click', startAnimation);
 
       function startAnimation() {
-        alert("hello");
+        console.log("animation started");
+        //alert("hello");
         $this = $(this);
         $this.addClass('flip-scale-up-hor');
         $this.off();
@@ -180,5 +182,8 @@ body:
 }) */
 
     });
+
   </script>
-</body></html>
+</body>
+
+</html>
