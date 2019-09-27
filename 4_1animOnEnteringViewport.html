@@ -4,13 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>3. parallax</title>
+  <title>4_1 Animation On scroll</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/parallax.css"> <!-- lacj -->
+  <link rel="stylesheet" href="css/realparallax.css"> <!-- lacj -->
+
+  <link rel="stylesheet" href="css/animation.css"> <!-- lacj -->
   <style>
     html {
       scroll-behavior: smooth;
@@ -40,6 +43,13 @@
       visibility: hidden;
     }
  */
+    .visible {
+      visibility: visible;
+    }
+
+    .not-visible {
+      visibility: hidden;
+    }
   </style><!-- https://www.w3schools.com/cssref/trysel.asp -->
 </head>
 <!-- https://getbootstrap.com/docs/4.0/components/scrollspy/#example-in-navbar
@@ -53,7 +63,7 @@ body:
   <!-- <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center"> -->
   <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center">
     <!-- fixed-top used as for fallback for IE, we might want sticky if we want white space above it-->
-    <a class="navbar-brand mr-auto" href="index.html">Parallax</a>
+    <a class="navbar-brand mr-auto" href="index.html">4_1. Animation vha intersection observer - real parallax</a>
     <ul class="nav nav-pills">
       <li class="nav-item">
         <a class="nav-link" href="#anchor-tag1">One</a>
@@ -77,11 +87,12 @@ body:
   </nav>
 
   <main>
+    <h1><a href="http://animista.net/play/basic/shadow-pop">http://animista.net/play/basic/shadow-pop</a></h1>
 
     <!-- class="container" bruges som yderste kasse (/container) for vores grid -->
     <div class="container">
       <h4 id="anchor-tag1">One</h4>
-      <section id="hero" class="mb-5">
+      <section id="hero" class="mb-5 animated">
         <div><img src="imgs/raadhuspladsen01.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
       </section>
     </div>
@@ -96,9 +107,9 @@ body:
     <div class="container">
       <section id="top" class="row">
         <h4 id="anchor-tag2" class="col-12">two</h4>
-        <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
-        <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
-        <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
+        <img class="col-4 img-fluid animated not-visible" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+        <img class="col-4 img-fluid animated delay-1s not-visible" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen">
+        <img class="col-4 img-fluid animated delay-2s not-visible" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
       </section>
     </div><!-- END container -->
     <!-- Second Parallax Section -->
@@ -132,16 +143,17 @@ body:
         <div class="col-6 offset-3"><img src="imgs/raadhuspladsen03.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
       </section>
     </div><!-- END .container -->
+    <!-- Third Parallax Section -->
+    <div class="jumbotron paral paralsec2">
+      <h1 class="display-3">Here is a heading 3</h1>
+      <p class="lead">Here is a short description 2</p>
+      <p class="lead">
+        <button class="btn btn-primary btn-lg btn-md" href="themes.html" role="button">Here is a button 3</button>
+      </p>
+    </div>
   </main>
 
-  <!-- Third Parallax Section -->
-  <div class="jumbotron paral paralsec2">
-    <h1 class="display-3">Here is a heading 3</h1>
-    <p class="lead">Here is a short description 2</p>
-    <p class="lead">
-      <button class="btn btn-primary btn-lg btn-md" href="themes.html" role="button">Here is a button 3</button>
-    </p>
-  </div>
+
   <footer id="footer" class="mt-auto py-3 container-fluid">
     <h3>Hello from Lasse Claes</h3>
 
@@ -154,4 +166,50 @@ body:
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
   <script src="bs/js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+      $('button').on('click', startAnimation);
+
+      function startAnimation() {
+        console.log("animation started");
+        //alert("hello");
+        $this = $(this);
+        $this.addClass('flip-scale-up-hor');
+        $this.off();
+        revertFlipScaleUp($this);
+      };
+
+      function revertFlipScaleUp(arg) {
+        setTimeout(function() {
+          $('button').on('click', startAnimation), arg.removeClass('flip-scale-up-hor')
+        }, 5000);
+      }
+
+      const doAnim = document.querySelectorAll(".animated");
+
+      console.log(doAnim);
+      //console.log(doAnim2);
+      const animObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+          console.log('entry:', entry);
+          console.log('animObserver:', animObserver);
+          console.log("ratio: ",
+            entry.intersectionRatio);
+          if (entry.intersectionRatio > 0) {
+            //alert(entry.target.innerHTML + "bhey");
+            entry.target.classList.add('zoomIn', 'visible');
+            animObserver.unobserve(entry.target);
+          } else //if (entry.intersectionRatio == 1)
+          {
+            //alert("no");
+            entry.target.classList.remove('zoomIn', 'visible');
+          }
+        });
+      });
+      doAnim.forEach(element => {
+        animObserver.observe(element);
+      });
+    });
+  </script>
 </body></html>

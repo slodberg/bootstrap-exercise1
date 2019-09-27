@@ -4,14 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>4. Animation On buttons - parallax</title>
+  <title>3. Fake "parallax"</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="bs/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/fakeparallax.css"> <!-- lacj -->
-  <link rel="stylesheet" href="css/animation.css"> <!-- lacj -->
   <style>
     html {
       scroll-behavior: smooth;
@@ -47,14 +46,13 @@
 body:
 -->
 
-<body class="position-relative" data-spy="scroll" data-target="#navbar-example2" data-offset="156">
+<body class="position-relative" data-target="#navbar-example2" data-offset="156">
   <!-- lacj: https://getbootstrap.com/docs/4.0/utilities/position/ -->
 
-  <!-- Add More Parallax Sections Here -->
   <!-- <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center"> -->
   <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center">
     <!-- fixed-top used as for fallback for IE, we might want sticky if we want white space above it-->
-    <a class="navbar-brand mr-auto" href="index.html">4. animation on buttonsParallax -2 with jQuery & CSS animations</a>
+    <a class="navbar-brand mr-auto" href="index.html">Fake parallax</a>
     <ul class="nav nav-pills">
       <li class="nav-item">
         <a class="nav-link" href="#anchor-tag1">One</a>
@@ -78,7 +76,6 @@ body:
   </nav>
 
   <main>
-    <h1><a href="http://animista.net/play/basic/shadow-pop">http://animista.net/play/basic/shadow-pop</a></h1>
 
     <!-- class="container" bruges som yderste kasse (/container) for vores grid -->
     <div class="container">
@@ -156,30 +153,4 @@ body:
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
   <script src="bs/js/bootstrap.min.js"></script>
-  <script>
-    $(function() {
-      $('button').on('click', startAnimation);
-
-      function startAnimation() {
-        console.log("animation started");
-        //alert("hello");
-        $this = $(this);
-        $this.addClass('flip-scale-up-hor');
-        $this.off();
-        revertFlipScaleUp($this);
-      };
-
-      function revertFlipScaleUp(arg) {
-        setTimeout(function() {
-          $('button').on('click', startAnimation), arg.removeClass('flip-scale-up-hor')
-        }, 5000);
-
-      }
-      /* sådan virker det ikke -
-      $('button').on('activate.bs.scrollspy', function () {
-        alert("hihi");
-}) */
-
-    });
-  </script>
 </body></html>

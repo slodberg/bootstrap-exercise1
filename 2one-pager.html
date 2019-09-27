@@ -24,19 +24,23 @@
 
     [id^=anchor] {}
 
-    #middle-2 {
+    #middle-2,
+    .h {
       background-color: red;
     }
 
-    [id^=anchor]:target::before {
+    :target::before {
       /*padding-top: 56px;
       margin-top: -56px;*/
+      /*visibility: hidden;
+      height: 100px;*/
       background-color: white;
+      background-color: transparent;
       display: block;
       content: " ";
-      margin-top: -75px;
-      height: 75px;
-      visibility: hidden;
+
+      padding-top: 100px;
+      margin-top: -100px;
     }
 
     footer {
@@ -59,28 +63,28 @@
 body:
 -->
 
-<body class="position-relative" data-spy="scroll" data-target="#navbar-example2" data-offset="156">
+<body class="position-relative" data-spy="scroll" data-target="#my-nav-bar" data-offset="156">
   <!-- lacj: https://getbootstrap.com/docs/4.0/utilities/position/ -->
 
   <!-- <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center"> -->
-  <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center">
+  <nav id="my-nav-bar" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center">
     <!-- fixed-top used as for fallback for IE, we might want sticky if we want white space above it-->
     <a class="navbar-brand" href="index.html">One-pager</a>
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link" href="#anchor-tag1">One</a>
+        <a class="nav-link" href="#hero">One</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#anchor-tag2">Two</a>
+        <a class="nav-link" href="#top">Two</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#anchor-tag3">Three</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#anchor-tag4">Four</a>
+        <a class="nav-link" href="#middle-2">Four</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#anchor-tag5">Five</a>
+        <a class="nav-link" href="#bottom-1">Five</a>
       </li>
       <!--       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -96,39 +100,43 @@ body:
 
   <main class="container">
     <!-- class="container" bruges som yderste kasse (/container) for vores grid -->
-
-    <section id="hero">
-      <h4>One</h4>
-      <div><img src="imgs/raadhuspladsen01.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
+    <section id="hero" class="my-5">
+      <h4 id="anchor-tag1">One</h4>
+      <img src="imgs/raadhuspladsen01.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen">
     </section>
-
-    <section id="top" class="row">
-      <h4 class="col-12">two</h4>
-      <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
-      <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
-      <div class="col-4"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
+    <section id="top" class="my-5">
+      <h4 id="anchor-tag2">two</h4>
+      <div class="row">
+        <img class="img-fluid col-4" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+        <img class="img-fluid col-4" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen">
+        <img class="img-fluid col-4" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+      </div><!-- END row -->
     </section>
-
-    <h4 id="anchor-tag3">three (sat uden for section for demo => anderledes margin-bottom)</h4>
-    <section id="middle" class="row">
-      <img class="col-6 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
-      <img class="col-6 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+    <section id="middle" class="my-5">
+      <h4 id="anchor-tag3">three</h4>
+      <div class="row">
+        <img class="col-6 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+        <img class="col-6 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+      </div><!-- END row -->
     </section>
-
-    <section id="middle-2">
-      <h4 id="anchor-tag4">four</h4>
+    <section id="middle-2" class="my-5">
+      <h4>four</h4>
       <div class="text-center"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
     </section>
-
-    <section id="bottom-1" class="row">
-      <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen01.jpg" alt="raadhuspladsen"></div>
-      <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
-      <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
-      <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
+    <section id="bottom-1" class="my-5">
+      <h4 id="anchor-tag5">five</h4>
+      <div class="row">
+        <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen01.jpg" alt="raadhuspladsen"></div>
+        <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
+        <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
+        <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
+      </div><!-- END row -->
     </section>
-    <section id="bottom-2" class="row">
-      <h4 id="anchor-tag5" class="col-12">Five</h4>
-      <div class="col-6 offset-3"><img src="imgs/raadhuspladsen03.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
+    <section id="bottom-2" class="my-5">
+      <h4>Six</h4>
+      <div class="row">
+        <div class="col-6 offset-3"><img src="imgs/raadhuspladsen03.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
+      </div><!-- END .row -->
     </section>
 
   </main>

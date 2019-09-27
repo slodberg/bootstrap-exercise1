@@ -4,16 +4,17 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>4. Animation On buttons - parallax</title>
+  <title>3.1 Real "parallax" - level: hard</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="bs/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/fakeparallax.css"> <!-- lacj -->
-  <link rel="stylesheet" href="css/animation.css"> <!-- lacj -->
+  <link rel="stylesheet" href="css/realparallax.css">
+  <!-- lacj: https://www.linkedin.com/learning/css-shorts/parallax-scroll-effect?u=36836804 -->
   <style>
-    html {
+    html,
+    main {
       scroll-behavior: smooth;
     }
 
@@ -23,13 +24,17 @@
 
     /* fix covering h4s when clicking nav items: https://github.com/twbs/bootstrap/issues/1768#issuecomment-9793708 */
     /* both below [id^=anchor] mess up box sizes & background-color lacj */
-    [id^=anchor] {
+    /*  [id^=anchor] {
       padding-top: 56px;
       margin-top: -56px;
-    }
+    } */
 
     footer {
       background-color: hotpink;
+    }
+
+    .active {
+      background: hotpink;
     }
 
     /*
@@ -41,20 +46,30 @@
       visibility: hidden;
     }
  */
+
   </style><!-- https://www.w3schools.com/cssref/trysel.asp -->
 </head>
 <!-- https://getbootstrap.com/docs/4.0/components/scrollspy/#example-in-navbar
 body:
 -->
 
-<body class="position-relative" data-spy="scroll" data-target="#navbar-example2" data-offset="156">
+<body class="position-relative">
   <!-- lacj: https://getbootstrap.com/docs/4.0/utilities/position/ -->
+  <p>DET HER ER SVÆRT at styre. Breaks data-spy="scroll" og html{scroll-behavior: smooth} knækker.</p>
+  <ol>
+    <li>Sæt scroll-bahviour på 'main'.</li>
+    <li>Her har jeg lavet en egen scroll-spy: Er elementet i viewporten => kan medføre flere .active-klasser i nav</li>
+    <li>Lytter på links i nav og<ol>
+        <li>Først fjernes active class på alle links</li>
+        <li>I samme moment tilføjes den til den, dewr er klikket på</li>
+      </ol>
+    </li>
+  </ol>
 
-  <!-- Add More Parallax Sections Here -->
   <!-- <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center"> -->
   <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top sticky-top justify-content-center">
     <!-- fixed-top used as for fallback for IE, we might want sticky if we want white space above it-->
-    <a class="navbar-brand mr-auto" href="index.html">4. animation on buttonsParallax -2 with jQuery & CSS animations</a>
+    <a class="navbar-brand mr-auto" href="index.html">Real parallax</a>
     <ul class="nav nav-pills">
       <li class="nav-item">
         <a class="nav-link" href="#anchor-tag1">One</a>
@@ -63,7 +78,7 @@ body:
         <a class="nav-link" href="#anchor-tag2">Two</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#anchor-tag3">Three</a>
+        <a class="nav-link" href="#anchor-tag5">Five</a>
       </li>
       <!--       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -78,15 +93,8 @@ body:
   </nav>
 
   <main>
-    <h1><a href="http://animista.net/play/basic/shadow-pop">http://animista.net/play/basic/shadow-pop</a></h1>
 
-    <!-- class="container" bruges som yderste kasse (/container) for vores grid -->
-    <div class="container">
-      <h4 id="anchor-tag1">One</h4>
-      <section id="hero" class="mb-5">
-        <div><img src="imgs/raadhuspladsen01.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
-      </section>
-    </div>
+
     <!-- First Parallax Section -->
     <div class="jumbotron paral paralsec">
       <h1 class="display-3">Here is a heading 1</h1>
@@ -95,6 +103,14 @@ body:
         <button class="btn btn-info btn-lg btn-md" href="#" role="button" type="button">Here is a button 1</button>
       </p>
     </div>
+    <!-- class="container" bruges som yderste kasse (/container) for vores grid -->
+    <div class="container">
+      <h4 id="anchor-tag1">One</h4>
+      <section id="hero" class="mb-5">
+        <div><img src="imgs/raadhuspladsen01.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
+      </section>
+    </div>
+
     <div class="container">
       <section id="top" class="row">
         <h4 id="anchor-tag2" class="col-12">two</h4>
@@ -112,8 +128,9 @@ body:
       </p>
     </div>
     <div class="container">
-      <h4 id="anchor-tag3">three (sat uden for section for demo => anderledes margin-bottom)</h4>
+
       <section id="middle" class="row">
+        <h4 id="anchor-tag3">three (sat uden for section for demo => anderledes margin-bottom)</h4>
         <img class="col-6 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
         <img class="col-6 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
       </section>
@@ -134,16 +151,15 @@ body:
         <div class="col-6 offset-3"><img src="imgs/raadhuspladsen03.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
       </section>
     </div><!-- END .container -->
+    <!-- Third Parallax Section -->
+    <div class="jumbotron paral paralsec2">
+      <h1 class="display-3">Here is a heading 3</h1>
+      <p class="lead">Here is a short description 2</p>
+      <p class="lead">
+        <button class="btn btn-primary btn-lg btn-md" href="themes.html" role="button">Here is a button 3</button>
+      </p>
+    </div>
   </main>
-
-  <!-- Third Parallax Section -->
-  <div class="jumbotron paral paralsec2">
-    <h1 class="display-3">Here is a heading 3</h1>
-    <p class="lead">Here is a short description 2</p>
-    <p class="lead">
-      <button class="btn btn-primary btn-lg btn-md" href="themes.html" role="button">Here is a button 3</button>
-    </p>
-  </div>
   <footer id="footer" class="mt-auto py-3 container-fluid">
     <h3>Hello from Lasse Claes</h3>
 
@@ -152,34 +168,57 @@ body:
 
   <!-- jQuery og popper.js inkludes herunder - nødvendigt for Bootstrap  - slet dem ikke-->
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
   <script src="bs/js/bootstrap.min.js"></script>
   <script>
     $(function() {
-      $('button').on('click', startAnimation);
+      var links = $('nav a');
+      links.click(function(e) {
+        links.removeClass('active');
+        $(this).addClass('active');
+        //e.preventDefault(); /*don't reload */
+        //var animateTo = e.target.hash;
+        /*var thisOffset = ($(e.target.hash).offset().top) / 2 - 104;
+              console.log(thisOffset);
+              $('main').animate({
+                scrollTop: thisOffset
+              }, 500);
+              //alert('hello');
+              return true;
+              //https://stackoverflow.com/questions/19303405/difference-between-html-body-animate-and-body-animate
+              const obs = document.querySelectorAll('[id^=anchor]');
+              console.log(obs);
 
-      function startAnimation() {
-        console.log("animation started");
-        //alert("hello");
-        $this = $(this);
-        $this.addClass('flip-scale-up-hor');
-        $this.off();
-        revertFlipScaleUp($this);
-      };
+*/
 
-      function revertFlipScaleUp(arg) {
-        setTimeout(function() {
-          $('button').on('click', startAnimation), arg.removeClass('flip-scale-up-hor')
-        }, 5000);
 
-      }
-      /* sådan virker det ikke -
-      $('button').on('activate.bs.scrollspy', function () {
-        alert("hihi");
-}) */
+      });
 
+      const obs = document.querySelectorAll('[id^=anchor]');
+      console.dir(obs);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const elementId = entry.target.id;
+          if (entry.intersectionRatio > 0) {
+            console.log("y" + elementId);
+            $('[href="#' + elementId + '"]').addClass('active');
+          } else {
+            console.log("n" + entry.target.innerHTML);
+            $('[href="#' + elementId + '"]').removeClass('active');
+          }
+        });
+      });
+      obs.forEach(element => {
+        console.log(element);
+        observer.observe(element);
+      });
     });
+
   </script>
-</body></html>
+</body>
+
+</html>
