@@ -1,6 +1,8 @@
 .sass-cache/
 *.css.map
 /bs-old_v4_0_0/
+/bs/css/bootstrap.css
+/downloads/
 
 # OS generated files #
 ######################
@@ -12,8 +14,4 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-/bs/css/bootstrap.css
-/js/Instagram-Photos-Without-API-instagramFeed/
-/js/Instagram-Photos-Without-API-instagramFeed.zip
-/js/jquery.instagramFeed-master.zip
-/js/jquery.instagramFeed-master/
+
