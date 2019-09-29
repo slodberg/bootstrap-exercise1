@@ -9,78 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="bs/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/rwd.css">
   <style>
-    /* // Extra small devices (portrait phones, less than 576px)
-    // No media query for `xs` since this is the default in Bootstrap
 
-    // Small devices (landscape phones, 576px and up) */
-    body {
-      background-color: red;
-    }
-
-    #top,
-    #bottom {
-      background: greenyellow;
-    }
-
-    body::before {
-      content: "mobile/under 576px. Deafult i Bootstrap: 'xs'";
-      padding: 1rem;
-      background-color: turquoise;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      opacity: 0.5;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    @media (min-width: 576px) {
-      body {
-        background-color: hotpink;
-      }
-
-      body::before {
-        content: "lig el. over 576px. 'sm'";
-      }
-    }
-
-    /* // Medium devices (tablets, 768px and up) */
-    @media (min-width: 768px) {
-      body {
-        background-color: yellow;
-      }
-
-      body::before {
-        content: "lig el. over 768px. 'md'";
-      }
-    }
-
-    /* // Large devices (desktops, 992px and up) */
-    @media (min-width: 992px) {
-      body {
-        background-color: peru;
-      }
-
-      body::before {
-        content: "lig el. over 992px. 'lg'";
-      }
-    }
-
-    /* // Extra large devices (large desktops, 1200px and up) */
-    @media (min-width: 1200px) {
-      body {
-        background-color: blue;
-      }
-
-      body::before {
-        content: "lig el. over 1200px. 'xl'";
-      }
-    }
   </style>
 
 </head>
@@ -95,30 +27,37 @@
     </section>
 
     <section id="top" class="row">
-      <div class="col-md-4 col-6 mb-3 mb-md-0"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
-      <div class="col-md-4 col-6 mb-3 mb-md-0"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
+      <div class="col-md-4 col-6 mb-4 mb-md-0"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
+      <div class="col-md-4 col-6 mb-4 mb-md-0"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
       <div class="col-md-4 col-12"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
     </section>
 
     <section id="middle" class="row">
-      <img class="col-md-6 img-fluid mb-3 mb-md-0" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+      <img class="col-md-6 img-fluid mb-4 mb-md-0" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
       <img class="col-md-6 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
     </section>
 
-    <section id="middle-2" style="background-color: red;">
+    <section id="middle-2">
       <div class="text-center"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
     </section>
 
-    <section id="bottom" class="row">
+    <!-- could have used no gutter-class and then readded them, I think -->
+    <!--<section id="bottom" class="row">
       <div class="col-md-3 col-6 pr-0 px-md-3"><img class="img-fluid mx-0" src="imgs/raadhuspladsen01.jpg" alt="raadhuspladsen"></div>
       <div class="col-md-3 col-6 pl-0 px-md-3"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
       <div class="col-md-3 col-6 pr-0 px-md-3"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
       <div class="col-md-3 col-6 pl-0 px-md-3"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
+    </section>-->
+    <section id="bottom" class="row">
+      <div class="col-md-3 col-6 mb-4 mb-md-0"><img class="img-fluid" src="imgs/raadhuspladsen01.jpg" alt="raadhuspladsen"></div>
+      <div class="col-md-3 col-6"><img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen"></div>
+      <div class="col-md-3 col-6"><img class="img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen"></div>
+      <div class="col-md-3 col-6"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
     </section>
 
     <footer id="footer" class="row">
       <!-- <div class="col-md-6 offset-md-3"> -->
-      <div class="col-6 offset-3"><img src="imgs/raadhuspladsen03.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
+      <div class="col-md-6 offset-md-3"><img src="imgs/raadhuspladsen03.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
     </footer>
 
   </main>
@@ -131,6 +70,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
   <script src="bs/js/bootstrap.min.js"></script>
-</body></html>
+</body>
+
+</html>
 <!-- notes:
 search and replace: "col-" with "col-md-" -->
