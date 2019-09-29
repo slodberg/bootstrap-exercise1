@@ -1,6 +1,6 @@
 # Bootstrap legeplads
 
-Giv agt! Herinde ligger der en masse kode-snippets, hvor jeg afprøver alt muligt... som en indlende undersøgelse af, hvad man kan med Bootstrap.
+Giv agt! Herinde ligger der en masse kode-snippets, hvor jeg afprøver alt muligt... som en indlende undersøgelse af, hvad man kan med Bootstrap, animationer, Intersection Observer API, jQuery m.m..
 
 Dvs. det er meget ufærdigt, og der anvendes sandsynligvis ikke best practice (endnu). 
 
