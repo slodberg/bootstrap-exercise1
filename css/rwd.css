@@ -2,7 +2,7 @@
     // No media query for `xs` since this is the default in Bootstrap*/
 
  /**************************************************/
- /*WRITE MOBILE STYLES AND GENERAL STYLES (fonts, colors etc.) HERE BEFORE THE FIRST BREAKPOINT*/
+ /* WRITE MOBILE STYLES AND GENERAL STYLES (fonts, colors etc.) HERE BEFORE THE FIRST BREAKPOINT */
 
  body {
    background-color: red;
