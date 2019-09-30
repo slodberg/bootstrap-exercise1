@@ -41,6 +41,7 @@
       visibility: hidden;
     }
  */
+
   </style><!-- https://www.w3schools.com/cssref/trysel.asp -->
 </head>
 <!-- https://getbootstrap.com/docs/4.0/components/scrollspy/#example-in-navbar
@@ -171,7 +172,7 @@ body:
 
       function revertFlipScaleUp(arg) {
         setTimeout(function() {
-          $('button').on('click', startAnimation), arg.removeClass('flip-scale-up-hor')
+          $(arg).on('click', startAnimation), arg.removeClass('flip-scale-up-hor')
         }, 5000);
 
       }
@@ -181,5 +182,8 @@ body:
 }) */
 
     });
+
   </script>
-</body></html>
+</body>
+
+</html>

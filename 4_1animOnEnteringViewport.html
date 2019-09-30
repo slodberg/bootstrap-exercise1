@@ -43,13 +43,14 @@
       visibility: hidden;
     }
  */
-    .visible {
-      visibility: visible;
-    }
-
-    .not-visible {
+    .non-visible {
       visibility: hidden;
     }
+
+    /*     .visible {
+      visibility: visible;
+    } */
+
   </style><!-- https://www.w3schools.com/cssref/trysel.asp -->
 </head>
 <!-- https://getbootstrap.com/docs/4.0/components/scrollspy/#example-in-navbar
@@ -107,9 +108,9 @@ body:
     <div class="container">
       <section id="top" class="row">
         <h4 id="anchor-tag2" class="col-12">two</h4>
-        <img class="col-4 img-fluid animated not-visible" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
-        <img class="col-4 img-fluid animated delay-1s not-visible" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen">
-        <img class="col-4 img-fluid animated delay-2s not-visible" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+        <img class="col-4 img-fluid animated non-visible" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+        <img class="col-4 img-fluid animated delay-1s non-visible" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen">
+        <img class="col-4 img-fluid animated delay-2s non-visible" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
       </section>
     </div><!-- END container -->
     <!-- Second Parallax Section -->
@@ -189,27 +190,38 @@ body:
 
       console.log(doAnim);
       //console.log(doAnim2);
+
+      let options = {
+        /* root: document.querySelector('#scrollArea'),
+        rootMargin: '0px', */
+        //threshold: 0.5
+      }
       const animObserver = new IntersectionObserver(entries => {
 
-        entries.forEach(entry => {
-          console.log('entry:', entry);
-          console.log('animObserver:', animObserver);
-          console.log("ratio: ",
-            entry.intersectionRatio);
-          if (entry.intersectionRatio > 0) {
-            //alert(entry.target.innerHTML + "bhey");
-            entry.target.classList.add('zoomIn', 'visible');
-            animObserver.unobserve(entry.target);
-          } else //if (entry.intersectionRatio == 1)
-          {
-            //alert("no");
-            entry.target.classList.remove('zoomIn', 'visible');
-          }
-        });
-      });
+          entries.forEach(entry => {
+            //console.log('entry:', entry);
+            //console.log('animObserver:', animObserver);
+            console.log("ratio: ",
+              entry.intersectionRatio);
+            if (entry.intersectionRatio > 0) {
+              //alert(entry.target.innerHTML + "bhey");
+              entry.target.classList.add('zoomIn', 'visible');
+              //animObserver.unobserve(entry.target);
+            }
+            if (entry.intersectionRatio === 1) {
+              console.log('hey');
+              //alert("no");
+              entry.target.classList.remove('zoomIn', 'visible');
+            }
+          });
+        },
+        options);
       doAnim.forEach(element => {
         animObserver.observe(element);
       });
     });
+
   </script>
-</body></html>
+</body>
+
+</html>
