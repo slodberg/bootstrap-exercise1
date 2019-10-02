@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>6. Parallax Lib</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .parallax-window {
+      min-height: 400px;
+      background: transparent;
+    }
+
+    .my-jumbo-text {
+      background: hotpink;
+      opacity: 0.8;
+      border-radius: 10px;
+      color: white;
+      max-width: 100%;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <div class="container">
+      <!-- class=" container" bruges som yderste kasse (/container) for vores grid -->
+      <section id="hero">
+        <img src="imgs/raadhuspladsen01.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen">
+      </section>
+
+      <section id="top" class="row">
+        <img class="col-4 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+        <img class="col-4 img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen">
+        <img class="col-4 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+      </section>
+
+      <section id="middle" class="row">
+        <img class="col-6 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+        <img class="col-6 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+      </section>
+
+      <section id="middle-2" class="text-center">
+        <img class="img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+      </section>
+    </div> <!-- END container -->
+
+    <div class="parallax-window jumbotron jumbotron-fluid container-fluid" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="imgs/pic.jpg" data-speed="0.5">
+      <div class="container my-jumbo-text w-100" data-parallax="scroll" data-speed="0.1">
+        <h1 class="display-3">Fluid jumbotron</h1>
+        <p class="lead">This is a modified jumbotron that occupies
+          the entire horizontal space of its parent.</p>
+      </div>
+
+      <!--
+    <div class="parallax-window">
+      <div class="parallax-slider">
+        <img src="https://picsum.photos/id/823/2000/3000" sizes="100vw">
+      </div>-->
+    </div><!-- END .parallax-window -->
+
+    <!--     <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="https://picsum.photos/id/823/2000/3000" data-natural-width="1400" data-natural-height="900" style="height: 350px;"></div> -->
+
+
+    <div class="container">
+      <section id="bottom" class="row no-gutters">
+        <img class="col-3 img-fluid" src="imgs/raadhuspladsen01.jpg" alt="raadhuspladsen">
+        <img class="col-3 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+        <img class="col-3 img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen">
+        <img class="col-3 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+      </section>
+
+      <footer id="footer" class="row">
+        <img src="imgs/raadhuspladsen03.jpg" class="col-6 offset-3 d-block mx-auto img-fluid" alt="raadhuspladsen">
+      </footer>
+    </div><!-- END .container -->
+  </main>
+
+  <!-- Ikke mere indhold efter denne linie -->
+
+  <!-- jQuery og popper.js inkludes herunder - nødvendigt for Bootstrap  - slet dem ikke-->
+
+  <!--   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <script src="bs/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script>
+    //jQuery(window).trigger('resize').trigger('scroll');
+    $('.parallax-window').parallax({
+      imageSrc: 'https://picsum.photos/id/823/2000/3000'
+    });
+
+  </script>
+</body>
+
+</html>
