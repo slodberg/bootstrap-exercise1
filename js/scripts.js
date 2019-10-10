@@ -2,6 +2,8 @@ $(function () { // DOM ready for jQuery??
   //write your code below
 
   //alert("helo")
+
+  //https://www.sowecms.com/demos/jquery.instagramFeed/index.html
   $.instagramFeed({
     'username': 'sb1864',
     /*'tag': 'sb1864',*/
