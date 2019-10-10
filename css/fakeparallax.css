@@ -1,5 +1,8 @@
 /*https://www.webnots.com/how-to-create-full-width-parallax-page-with-bootstrap-4-jumbotron/ */
 
+CSS er ført ind i HTML'en i 3fakeparallax.html
+
+
 .paral {
   height: 100%;
   /*lacj*/
@@ -28,7 +31,7 @@
   line-height: 100px;
 }
 
-.paralsec {
+/*.paralsec {
   background-image:
     url("https://img.webnots.com/2017/05/parallax.jpg");
 }
@@ -44,7 +47,7 @@
     url("https://img.webnots.com/2015/11/parallax2.jpg");
 
   margin-bottom: 8rem;
-}
+}*/
 
 
 .paralsec {
@@ -54,22 +57,22 @@
 
 .paralsec1 {
   background-image:
-    url("https://picsum.photos/id/822/3000/2000");
+    url("https://picsum.photos/id/820/3000/2000");
 }
 
 .paralsec2 {
   background-image:
     url("https://picsum.photos/id/821/3000/2000");
-  margin-bottom: 8rem;
+  /* margin-bottom: 8rem;*/
 }
 
-/*
+/* del af proces herunder: jumbotron-fluid og mb-0 klasser er tilføjet i HTML og gøre det samme - did not know Bootstrap too well, da jeg lavede dette først */
 */
-
 /* Remove Bottom Margin from Jumbotron */
-.jumbotron {
+/*.jumbotron {
   margin-bottom: 0;
   /*padding: 0;*/
-  border-radius: 0;
-  /*lacj tilføjet, undgår at billederne strækkes på scroll -  2. .rounded-0 virker ikke*/
+/*lacj tilføjet, undgår at billederne strækkes på scroll -  2. .rounded-0 virker ikke*/
+/*border-radius: 0;
 }
+*/
