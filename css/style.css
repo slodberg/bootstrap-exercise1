@@ -20,3 +20,11 @@ section {
 #my-nav-bar {
   height: 100px;
 }
+
+a {
+  overflow-wrap: break-word;
+}
+
+section#my-instagram-feed img {
+  border-radius: 10px;
+}

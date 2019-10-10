@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="bs/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -97,10 +97,6 @@
       <div class="col-3"><img class="img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen"></div>
     </section>
 
-
-
-
-
     <footer id="footer" class="row">
       <div class="col-6 offset-3"><img src="imgs/raadhuspladsen03.jpg" class="d-block mx-auto img-fluid" alt="raadhuspladsen"></div>
     </footer>
@@ -109,53 +105,21 @@
 
   <!-- Ikke mere indhold efter denne linie -->
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
 
   <!-- jQuery og popper.js inkludes herunder - nødvendigt for Bootstrap  - slet dem ikke-->
+  <!-- NOT THIS fra https://www.jqueryscript.net/social-media/Instagram-Photos-Without-API-instagramFeed.html
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+ -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
 
-  <!--   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script> -->
+  <!-- NOT THIS fra Bootstraps intro-side
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
   <script src="bs/js/bootstrap.min.js"></script>
   <script src="js/jquery.instagramFeed.min.js"></script>
-  <script>
-    //$(function() {
-    (function($) {
-      $(window).on('load', function() {
-        //alert("helo")
-        $.instagramFeed({
-          'username': 'lasseclaes',
-          'container': "#my-instagram-feed",
-          'display_profile': true,
-          'display_biography': true,
-          'display_gallery': true,
-          'get_data': false,
-          'callback': "seeJson",
-          'styling': true,
-          'items': 20,
-          'items_per_row': 4,
-          'margin': 1
-          /*'username': 'lasseclaes',
-          'container': "#my-instagram-feed",
-          'get_data': true,
-          'callback': seeJson*/
-        });
-      });
-    })(jQuery);
-    //});
+  <script src="js/scripts.js"></script>
 
-    function seeJson(data) {
-      console.log(data);
-    }
-
-  </script>
-
-
-
-</body>
-
-</html>
-
-<!-- notes brug instagram feedets integrity URL - ellers virker det ikke -->
+</body></html>
