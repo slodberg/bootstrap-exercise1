@@ -1,0 +1,36 @@
+/*style.css - til dine custom styles*/
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+  /*background-attachment: fixed;
+  background-position: center center;*/
+}
+
+.my-jumbo-text {
+  background: hotpink;
+  opacity: 0.8;
+  border-radius: 10px;
+  color: white;
+  max-width: 100%;
+}
+
+section,
+footer {
+  margin-bottom: 30px;
+}
+
+img {
+  padding: 10px;
+  background-color: greenyellow;
+  align-self: center;
+}
+
+/*
+#my-nav-bar {
+  height: 100px;
+}
+
+a {
+  overflow-wrap: break-word;
+}*/

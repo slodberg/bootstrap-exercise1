@@ -13,7 +13,8 @@ built in with the '.img-fluid' class
 } */
 
 /* 1. simple grid */
-section {
+section,
+footer {
   margin-bottom: 30px;
 }
 

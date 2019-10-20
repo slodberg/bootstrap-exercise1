@@ -4,15 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>6. Parallax Lib</title>
+  <title>10. Parallax Lib</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bs/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .parallax-window {
+    .parallax-window,
+    .parallax-window-2 {
       min-height: 400px;
       background: transparent;
+      background-attachment: fixed;
+      background-position: center center;
     }
 
     .my-jumbo-text {
@@ -50,8 +53,8 @@
       </section>
     </div> <!-- END container -->
 
-    <div class="parallax-window jumbotron jumbotron-fluid container-fluid" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="imgs/pic.jpg" data-speed="0.5">
-      <div class="container my-jumbo-text w-100" data-parallax="scroll" data-speed="0.1">
+    <section class="parallax-window jumbotron jumbotron-fluid container-fluid" data-parallax="scroll" data-position="0 0px" data-bleed="10" data-image-src="imgs/pic.jpg" data-speed="0.5">
+      <div class="container my-jumbo-text w-100" data-parallax="scroll" data-speed="0.3">
         <h1 class="display-3">Fluid jumbotron</h1>
         <p class="lead">This is a modified jumbotron that occupies
           the entire horizontal space of its parent.</p>
@@ -62,7 +65,7 @@
       <div class="parallax-slider">
         <img src="https://picsum.photos/id/823/2000/3000" sizes="100vw">
       </div>-->
-    </div><!-- END .parallax-window -->
+    </section><!-- END .parallax-window -->
 
     <!--     <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="https://picsum.photos/id/823/2000/3000" data-natural-width="1400" data-natural-height="900" style="height: 350px;"></div> -->
 
@@ -79,7 +82,45 @@
         <img src="imgs/raadhuspladsen03.jpg" class="col-6 offset-3 d-block mx-auto img-fluid" alt="raadhuspladsen">
       </footer>
     </div><!-- END .container -->
+    <!--
+    <section id="plax-target-1">
+      <div class="parallax-window jumbotron jumbotron-fluid container-fluid" data-parallax="scroll" data-position="0 0px" data-bleed="10" data-image-src="https://picsum.photos/id/824/2000/3000" data-speed="0.5" data-anchor-target="#plax-target-1">
+        <div class="container my-jumbo-text w-100" data-parallax="scroll" data-speed="0.1">
+          <h1 class="display-3">Fluid jumbotron</h1>
+          <p class="lead">This is a modified jumbotron that occupies
+            the entire horizontal space of its parent.</p>
+        </div>
+      </div> END .parallax-window 
+    </section>
+-->
+
   </main>
+  <section class="parallax-window jumbotron jumbotron-fluid container-fluid" data-parallax="scroll" data-position="0 0px" data-bleed="10" data-image-src="https://picsum.photos/id/824/3000/2000" data-speed="0.5">
+    <div class="container my-jumbo-text w-100" data-parallax="scroll" data-speed="0.1">
+      <h1 class="display-3">Fluid jumbotron</h1>
+      <p class="lead">This is a modified jumbotron that occupies
+        the entire horizontal space of its parent.</p>
+    </div>
+
+    <!--
+    <div class="parallax-window">
+      <div class="parallax-slider">
+        <img src="https://picsum.photos/id/823/2000/3000" sizes="100vw">
+      </div>-->
+  </section><!-- END .parallax-window -->
+  <section id="bottom" class="row no-gutters">
+    <img class="col-3 img-fluid" src="imgs/raadhuspladsen01.jpg" alt="raadhuspladsen">
+    <img class="col-3 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+    <img class="col-3 img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen">
+    <img class="col-3 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+  </section>
+
+  <section id="bottom" class="row no-gutters">
+    <img class="col-3 img-fluid" src="imgs/raadhuspladsen01.jpg" alt="raadhuspladsen">
+    <img class="col-3 img-fluid" src="imgs/raadhuspladsen02.jpg" alt="raadhuspladsen">
+    <img class="col-3 img-fluid" src="imgs/raadhuspladsen04.jpg" alt="raadhuspladsen">
+    <img class="col-3 img-fluid" src="imgs/raadhuspladsen06.jpg" alt="raadhuspladsen">
+  </section>
 
   <!-- Ikke mere indhold efter denne linie -->
 
@@ -89,5 +130,5 @@
 
   <script src="bs/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
-  <script src="js/parallax-script.js"></script>
+  <script src="js/10parallax-script.js"></script>
 </body></html>
