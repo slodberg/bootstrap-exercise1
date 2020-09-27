@@ -1,10 +1,8 @@
 /* "css/style.css" - til dine custom styles*/
 
-/* Før du skriver noget CSS selv, så tjek https://getbootstrap.com/docs/4.3/getting-started/introduction/ (menuen til venstre)
+/* Før du skriver noget CSS selv, så tjek Bootstraps dokumentation.
+Bogmærk linkene fra Fronter i din browser!
 
-Der er masser af indbyggede classes for alt muligt i bootstrap, som du hellere skal tilføje i HTML-filen.
-F.eks. for typografi, spacing (margin og padding), flexboxes og positionering med meget mere */
+Der er masser af indbyggede classes for alt muligt i Bootstrap, f.eks. for typografi, spacing (margin og padding), flexboxes og positionering med meget mere.
 
-section {
-  margin-bottom: 30px;
-}
+Disse indbyggede classes, skal du hellere tilføje i HTML-filen end skrive egen CSS - i hvert fald til at begynde med. */
